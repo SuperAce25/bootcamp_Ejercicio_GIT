@@ -1,0 +1,53 @@
+APPOINTMENTS
+{
+    "dateAppointment": "11/12/2022",  
+    "hourAppointment": "11:15",  
+    "idtest": "2",
+    "idaffiliate": "3"  
+}
+
+{
+    "dateAppointment": "11/12/2022",  
+    "hourAppointment": "11:00",  
+    "idtest": "1",
+    "idaffiliate": "1"  
+}
+
+AFFILIATES
+{
+    "name": "Carol Danvers",  
+    "age": "37",  
+    "mail": "msmarvel@marvel.com"
+}
+
+{
+    "name": "Bruce Banner",  
+    "age": "38",  
+    "mail": "hulk@marvel.com"
+}
+
+{
+    "name": "Peter Parker",  
+    "age": "21",  
+    "mail": "spiderman@marvel.com"
+}
+
+TESTS
+
+{
+    "name": "Complete Blood Test",  
+    "description": "Includes the RBC, WBC, Platelets, Hemoglobin, Hematocrit"
+}
+
+{
+    "name": "Urinalysis",  
+    "description": "Test for urine to check urinary tract infections and kidney problems"
+}
+
+{
+    "name": "Thyroid Panel",  
+    "description": "Checking how well the thyroid is working"
+}
+
+
+
