@@ -52,8 +52,9 @@ public class AppointmentsControllerTest {
 		var response = appointmentController.getlist();
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
+	
 	@Test
-	public void getlisttestnull(){	
+	public void getlisttestempty(){
 		Mockito.when(appointmentServicemock.getlist()).thenReturn(appointmentList);
 		var response = appointmentController.getlist();
 		Assertions.assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
@@ -61,16 +62,20 @@ public class AppointmentsControllerTest {
 	
 	@Test
 	public void getbyidtest(){
+		
 		Mockito.when(appointmentServicemock.getbyid(11)).thenReturn(appointment);
 		var response = appointmentController.getbyid(11);
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+		
 	}
 	
 	@Test
-	public void getbyidnulltest(){
-		Mockito.when(appointmentServicemock.getbyid(11)).thenReturn(new Appointment());
+	public void getbyidemptytest(){
+		
+		Mockito.when(appointmentServicemock.getbyid(11)).thenReturn(appointment);
 		var response = appointmentController.getbyid(12);
 		Assertions.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+		
 	}
 	
 	@Test

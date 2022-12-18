@@ -57,9 +57,9 @@ public class AppointmentsController {
 	public ResponseEntity<String> post(@RequestBody Appointment appointment){ 
 		if (appointment.getIdaffiliate() != null) {
 			appointmentService.saveOrUpdate(appointment);  
-			return new ResponseEntity<String>("Created", null, HttpStatus.CREATED); //affiliat.getId()
+			return new ResponseEntity<String>("Created", null, HttpStatus.CREATED);
 		}else{
-			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<String>("Not Created", null, HttpStatus.NOT_FOUND);
 		}
 	}
 	
@@ -69,7 +69,7 @@ public class AppointmentsController {
 			appointmentService.update(appointment);  
 			return new ResponseEntity<String>("Updated", null, HttpStatus.CREATED);
 		}else{
-			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<String>("Id not found", null, HttpStatus.NOT_FOUND);
 		}
 	}
 	
@@ -83,7 +83,7 @@ public class AppointmentsController {
 		}
 	}
 	
-	@GetMapping("/api/appointments/affiliate")
+	@GetMapping("/api/appointments/findbyaffiliate")
 	public ResponseEntity<List<Appointment>> getbyaffiliates(@RequestParam("affiliate") Integer affiliate){
 		if(appointmentService.findbyaffiliate(affiliate).isEmpty()) {
 			return new ResponseEntity<List<Appointment>>(HttpStatus.NO_CONTENT);
@@ -92,7 +92,7 @@ public class AppointmentsController {
 		}
 	}
 	
-	@GetMapping("/api/appointments/date")
+	@GetMapping("/api/appointments/findbydate")
 	public ResponseEntity<List<Appointment>> getbydate(@RequestParam("date")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	LocalDate date){
